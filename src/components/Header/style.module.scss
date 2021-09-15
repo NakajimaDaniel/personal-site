@@ -1,0 +1,56 @@
+
+
+.MainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  
+  > img {
+    max-width: 20rem;
+    cursor: pointer;
+  }
+}
+
+.HeaderMenu {
+  color: #3C3C3C;
+  margin-right: 3rem;
+  
+  span {
+    cursor: pointer;
+    padding: 0 1.5rem;
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    transition: color 0.2s;
+    transition: background-color 1s;
+
+    &.active::after {
+      content: '';
+      height: 3px;
+      width: 90%;
+      position: absolute;
+      bottom: -3px;
+      left: 5%;
+      background: #FFC700;
+    }
+
+    &:not(.active):hover {
+      color: rgba(60, 60, 60, 0.6);
+    }
+
+    &:not(.active):hover::after {
+      content: '';
+      height: 3px;
+      width: 90%;
+      position: absolute;
+      bottom: -3px;
+      left: 5%;
+      background-color: #ffc80069;
+    }
+
+
+  }
+}
