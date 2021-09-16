@@ -1,0 +1,55 @@
+
+
+.HomeContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 4rem 2rem;
+
+}
+
+
+.HomeTextArea {
+
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+    font: 400 1rem "Inter";
+    font-size: 28px;
+    color: #3C3C3C;
+  }
+
+}
+
+
+.socialLink {
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  >img {
+    width: 100%;
+    max-width: 22px;
+    cursor: pointer;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: invert(81%) sepia(34%) saturate(2571%) hue-rotate(358deg) brightness(100%) contrast(105%);
+    }
+
+  }
+
+  img:nth-child(2) {
+    max-width: 30px;
+    cursor: pointer;
+  }
+  
+
+
+}
