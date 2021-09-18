@@ -1,0 +1,123 @@
+
+
+
+.MainContainer {
+
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+
+  h1 {
+    font-size: 22px;
+  }
+
+}
+
+
+.ProjectBox {
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 30rem;
+  background-color: #F9F9F9;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+  span {
+    font: 500 1rem "Inter";
+    color: #3C3C3C;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    font: 400 1rem "Inter";
+    color: #3C3C3C;
+  }
+
+
+}
+
+
+.ImgWrapper {
+
+  position: relative;
+
+  img:first-child {
+    width: 100%;
+  }
+
+  
+  // .ExtLink {
+
+  //   position: absolute;
+  //   bottom: 20px;
+  //   right: 30px;
+  //   background: white;
+  //   display: flex;
+  //   flex-direction: row;
+  //   width: 30px;
+  //   transition: width 400ms ease-in-out;
+  //   align-items: center;
+
+  //   span {
+  //     display: flex;
+  //     align-items: center;
+  //     overflow: hidden;
+
+  //     img {
+  //       overflow: visible;
+  //     }
+
+  //   }
+
+  // }
+
+  .ExtLink {
+
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    bottom: 20px;
+    right: 30px;
+  
+    overflow: hidden;
+
+    max-width: 20px;
+    height: 20px;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    transition: max-width 1s ease;
+
+
+    &:hover {
+      max-width: 200px;
+      cursor: pointer;
+      p{
+        display: block;
+        text-decoration: underline;
+        color: #959595;
+      }
+      img {
+        padding-right: 0.5rem;
+      }
+    }
+
+    p {
+      display: none;
+    }
+
+    img {
+      width: 20px;
+    }
+
+  }
+
+
+}
+
+
