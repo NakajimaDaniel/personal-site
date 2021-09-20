@@ -25,6 +25,7 @@
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  justify-self: center;
 
   span {
     font: 500 1rem "Inter";
@@ -47,34 +48,11 @@
 
   img:first-child {
     width: 100%;
+    max-height: 286px;
+    border-radius: 10px;
   }
 
   
-  // .ExtLink {
-
-  //   position: absolute;
-  //   bottom: 20px;
-  //   right: 30px;
-  //   background: white;
-  //   display: flex;
-  //   flex-direction: row;
-  //   width: 30px;
-  //   transition: width 400ms ease-in-out;
-  //   align-items: center;
-
-  //   span {
-  //     display: flex;
-  //     align-items: center;
-  //     overflow: hidden;
-
-  //     img {
-  //       overflow: visible;
-  //     }
-
-  //   }
-
-  // }
-
   .ExtLink {
 
     position: absolute;
@@ -95,7 +73,7 @@
 
 
     &:hover {
-      max-width: 200px;
+      max-width: 500px;
       cursor: pointer;
       p{
         display: block;
@@ -121,3 +99,10 @@
 }
 
 
+.ProjectsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  align-items: center;
+  gap: 3rem;
+}
