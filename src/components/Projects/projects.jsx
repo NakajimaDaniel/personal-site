@@ -1,4 +1,4 @@
-import { Header } from "../components/Header";
+import { Header } from "../Header";
 import styles from './projects.module.scss';
 
 import Link from 'next/link';
@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 export default function Projects() {
   return (
-    <div>
-      <Header />
+    <div id="projects">
+   
 
       <div className={styles.MainContainer}>
         <h1>Personal Projects</h1>
