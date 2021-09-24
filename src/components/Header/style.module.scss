@@ -15,7 +15,7 @@
 }
 
 .HeaderMenu {
-  color: #3C3C3C;
+  color: white;
   margin-right: 3rem;
   
   span {
@@ -38,7 +38,7 @@
     }
 
     &:not(.active):hover {
-      color: rgba(60, 60, 60, 0.6);
+      color: #C5C5C5;
     }
 
     &:not(.active):hover::after {
