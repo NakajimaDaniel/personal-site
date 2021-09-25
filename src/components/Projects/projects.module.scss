@@ -7,9 +7,10 @@
   display: flex;
   flex-direction: column;
 
-
-  h1 {
-    font-size: 22px;
+  span {
+    font-size: 30px;
+    color: white;
+    padding-bottom: 5rem;
   }
 
 }
@@ -21,24 +22,40 @@
   flex-direction: column;
   width: 100%;
   max-width: 30rem;
-  background-color: #F9F9F9;
+  background-color: #262626;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   justify-self: center;
+  border: dashed 1px #FFC700;
+  height: 29rem;
+
+  &:hover {
+    border: dashed 1px #FFECA8;
+  }
 
   span {
     font: 500 1rem "Inter";
-    color: #3C3C3C;
+    color: #F0F0F0;
     padding-bottom: 1rem;
   }
 
+
+
+
+}
+
+.ProjectBoxText {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 1rem;
+
   p {
     font: 400 1rem "Inter";
-    color: #3C3C3C;
+    color: #E0E0E0;
   }
-
-
 }
 
 
@@ -50,6 +67,7 @@
     width: 100%;
     max-height: 286px;
     border-radius: 10px;
+    height: 270px;
   }
 
   
@@ -64,21 +82,26 @@
   
     overflow: hidden;
 
-    max-width: 20px;
-    height: 20px;
+    max-width: 30px;
+    height: 30px;
     align-items: center;
     padding: 0.4rem;
     border-radius: 0.4rem;
-    transition: max-width 1s ease;
+    transition: max-width 0.5s ease;
 
 
     &:hover {
-      max-width: 500px;
+      max-width: 300px;
       cursor: pointer;
-      p{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+      p {
         display: block;
         text-decoration: underline;
         color: #959595;
+
       }
       img {
         padding-right: 0.5rem;
@@ -90,7 +113,7 @@
     }
 
     img {
-      width: 20px;
+      max-width: 30px;
     }
 
   }
@@ -104,5 +127,46 @@
   grid-template-columns: 1fr 1fr;
   align-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 30vw;
+}
+
+.ProjectsMainWrapper {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+
+}
+
+@media screen and (max-width: 1800px) {
+  
+.ProjectsContainer {
+  gap: 20vw;
+}
+}
+
+@media screen and (max-width: 1590px) {
+  
+  .ProjectsContainer {
+    gap: 10vw;
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  
+  .ProjectsContainer {
+    gap: 2vw;
+  }
+
+}
+
+@media screen and (max-width: 1310px) {
+
+  .ProjectsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
