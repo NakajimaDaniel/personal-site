@@ -6,6 +6,8 @@
   margin: 1.5rem;
   display: flex;
   flex-direction: column;
+  padding-top: 6rem;
+  margin-bottom: 0rem;
 
   span {
     font-size: 30px;
@@ -21,13 +23,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 30rem;
+  max-width: 35rem;
   background-color: #262626;
   padding: 1rem;
   border-radius: 10px;
   justify-self: center;
   border: dashed 1px #FFC700;
-  height: 29rem;
+  height: 35rem;
 
   &:hover {
     border: dashed 1px #FFECA8;
@@ -52,6 +54,10 @@
   height: 100%;
   padding-top: 1rem;
 
+  p:first-child {
+    padding-bottom: 1rem;
+  }
+  
   p {
     font: 400 1rem "Inter";
     color: #E0E0E0;
@@ -65,9 +71,7 @@
 
   img:first-child {
     width: 100%;
-    max-height: 286px;
     border-radius: 10px;
-    height: 270px;
   }
 
   
@@ -127,16 +131,20 @@
   grid-template-columns: 1fr 1fr;
   align-content: center;
   align-items: center;
-  gap: 30vw;
+  gap: 20vw;
 }
 
 .ProjectsMainWrapper {
   display: flex;
   flex-direction: row;
-
   justify-content: center;
   align-items: center;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
+
+  > img {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
 }
 
