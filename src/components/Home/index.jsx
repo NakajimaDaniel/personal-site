@@ -16,17 +16,15 @@ export default function Home() {
           
           <div className={styles.HomeTextArea}>
                 <h3>Hi, my name is</h3>
-                <h4>Daniel</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Quisque sit amet imperdiet odio, sodales ultricies ipsum. 
-                  In vel libero vitae nisl maximus convallis nec vel magna. 
+                <h4>Daniel !</h4>
+                <p>Im a front end developer looking for new oportunities. 
                 </p>
       
                 <div className={styles.socialLink}>
-                  <Link href="/" >
+                  <Link href="https://github.com/NakajimaDaniel" >
                     <img src="github_icon.svg" alt="github social link" />
                   </Link>
-                  <Link href="/" >
+                  <Link href="https://www.linkedin.com/in/daniel-akio-nakajima-745319146/" >
                     <img src="linkedin_social_icon.svg" alt="linkedin social link" />
                   </Link>
                 </div>
@@ -45,16 +43,15 @@ export default function Home() {
               <div className={styles.HomeTextArea}>
                 <h3>Hi, my name is</h3>
                 <h4>Daniel</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Quisque sit amet imperdiet odio, sodales ultricies ipsum. 
-                  In vel libero vitae nisl maximus convallis nec vel magna. 
+                <p>
+                  Im a front end developer looking for new oportunities. 
                 </p>
       
                 <div className={styles.socialLink}>
-                  <Link href="/" >
+                  <Link href="https://github.com/NakajimaDaniel" >
                     <img src="github_icon.svg" alt="github social link" />
                   </Link>
-                  <Link href="/" >
+                  <Link href="https://www.linkedin.com/in/daniel-akio-nakajima-745319146/" >
                     <img src="linkedin_social_icon.svg" alt="linkedin social link" />
                   </Link>
                 </div>
