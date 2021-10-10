@@ -5,7 +5,7 @@ import { useDimensions } from '../../hooks/useDimensions';
 
 export default function Home() {
 
-  const { width, heigth } = useDimensions();
+  const { width, height } = useDimensions();
 
 
 
@@ -42,7 +42,7 @@ export default function Home() {
       
               <div className={styles.HomeTextArea}>
                 <h3>Hi, my name is</h3>
-                <h4>Daniel</h4>
+                <h4>Daniel !</h4>
                 <p>
                   Im a front end developer looking for new oportunities. 
                 </p>
