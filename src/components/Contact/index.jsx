@@ -7,10 +7,10 @@ export default function Contact() {
       <div className={styles.MainContainer}>
         <span># Contact</span>
         <div className={styles.ContactContent}>
-          <p>If you have a question, send me a message. </p>
+          <p>If you have any question, feel free to send me a message! </p>
           <a>Contact Me</a>
           <div className={styles.ContactInfo}>
-            <a href="">
+            <a href="https://github.com/NakajimaDaniel">
               <img src="github_icon.svg" alt="" />
             </a>
             <a href="">
@@ -18,7 +18,7 @@ export default function Contact() {
             </a>
           </div>
           <img src="contactImg.svg" alt="" />
-          <p>Designed by Daniel</p>
+          <p>Designed by Daniel N.</p>
         </div>
       </div>
     </div>
