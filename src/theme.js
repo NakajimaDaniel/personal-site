@@ -15,8 +15,13 @@ const colors = {
   },
 
   blue: {
+    "transparent": "rgba(26, 32, 44, 0.9)",
     "800": "#1F2531",
   },
+
+  white: {
+    "transparent": "rgba(255, 255, 255, 0.9)",
+  }
 
   
 }

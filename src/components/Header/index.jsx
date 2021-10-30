@@ -18,7 +18,7 @@ export function Header() {
   const { width, height } = useDimensions();
 
   return (
-    <Container maxW="100vw" w="100%" p="0" styles={{filter:  "blur(5px)"}} position="fixed" top="0" pt="5" pl="5">
+    <Container maxW="100vw" w="100%" p="0" styles={{filter:  "blur(200px)"}}  bg={colorMode === "dark" ? "blue.transparent" : "white.transparent" }  position="fixed" top="0" pt="5" pl="5" pb="3">
       <Flex align="center">
         <Box>
           {colorMode === "dark" ? (
