@@ -21,6 +21,7 @@ const colors = {
 
   white: {
     "transparent": "rgba(255, 255, 255, 0.9)",
+    "700": "#F9F9F9",
   }
 
   
