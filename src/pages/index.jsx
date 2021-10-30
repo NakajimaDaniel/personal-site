@@ -1,22 +1,27 @@
-import { Header } from "../components/Header";
+
+import { Container, Box, Text } from '@chakra-ui/react'
+
+import { motion } from 'framer-motion'
 
 
-
-import Projects from "../components/Projects/projects";
-import Contact from "../components/Contact";
-import Home from "../components/Home";
+const MotionBox = motion(Box)
 
 
 export default function Page() {
   return (
-    <div>
-      <Header />
-      <Home /> 
-      <Projects />
-
-      <Contact /> 
-
-
-    </div>
+    <Container mt="20" maxW="100vw" w="100%">
+      <Box pt="20" pl={[4,10,20]}>
+        <Text fontSize={['2xl','3xl']}>
+          Hi, my name is
+        </Text>
+        <Text fontSize={["4xl","5xl"]} fontWeight="bold" pb="3">
+          Daniel Nakajima !
+        </Text>
+        <Text fontSize={["xl"]} w={["100%","60%"]}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac scelerisque ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+        </Text>
+        
+      </Box>
+    </Container>
   )
 }

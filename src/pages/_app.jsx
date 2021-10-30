@@ -1,15 +1,17 @@
-import "../styles/global.scss"
-import Head from 'next/head'
+
+
+import { ChakraProvider } from '@chakra-ui/react';
+import {theme} from '../theme'
+import { Layout } from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Daniel Nakajima | Personal Site</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-      </Head>
-      <Component {...pageProps} />
-    </>
+    <ChakraProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      
+    </ChakraProvider>
   )
 }
 
