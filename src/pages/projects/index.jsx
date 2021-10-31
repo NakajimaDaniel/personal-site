@@ -2,9 +2,9 @@
 
 import { Container, Box, Text, Flex, Image, SimpleGrid, useColorMode  } from '@chakra-ui/react'
 
-export default function projects() {
+export default function Projects() {
 
-  const { colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <Container maxW="100vw" w="100%" mt="20">
