@@ -1,12 +1,14 @@
 
 
 import { Container, Box, Text, Flex, Image, SimpleGrid, useColorMode  } from '@chakra-ui/react'
+import { PageAnimation } from '../../components/PageAnimation'
 
 export default function Projects() {
 
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
+    <PageAnimation>
     <Container maxW="100vw" w="100%" mt="20">
       <Box pt="6" pl="10" pb="10">
         <Text fontWeight="bold" fontSize="2xl">
@@ -53,5 +55,6 @@ export default function Projects() {
       </SimpleGrid>
 
     </Container>
+    </PageAnimation>
   )
 }
