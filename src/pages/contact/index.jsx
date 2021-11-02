@@ -4,10 +4,13 @@ import { AiFillGithub } from "react-icons/ai"
 import { FaLinkedinIn } from "react-icons/fa"
 
 import { Container, Box, Text, Button, Flex } from "@chakra-ui/react"
+import { PageAnimation } from "../../components/PageAnimation"
+
 
 
 export default function contact() {
   return (
+    <PageAnimation>
     <Container maxW="100vw" w="100%" mt="20">
       <Box align="center" pt="20" mt="20">
         <Text pt="10" pb="10" fontWeight="semibold">Feel free to contact me!</Text>
@@ -37,5 +40,6 @@ export default function contact() {
         </Flex>
       </Box>
     </Container>
+    </PageAnimation>
   )
 }
