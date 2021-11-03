@@ -18,7 +18,7 @@ export function Header() {
   const { width, height } = useDimensions();
 
   return (
-    <Container maxW="100vw" w="100%" p="0" styles={{filter:  "blur(200px)"}}  bg={colorMode === "dark" ? "blue.transparent" : "white.transparent" }  position="fixed" top="0" pt="5" pl="5" pb="3">
+    <Container maxW="100vw" w="100%" p="0" bg={colorMode === "dark" ? "blue.transparent" : "white.transparent" }  position="fixed" top="0" pt="5" pl="5" pb="3" zIndex={20} backdropFilter="saturate(180%) blur(5px)" >
       <Flex align="center">
         <Box>
           {colorMode === "dark" ? (
@@ -76,10 +76,12 @@ export function Header() {
                       icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                     /> 
                     <MenuList>
+                      <Link href="/">
                       <MenuItem>Home</MenuItem>
+                      </Link>
                       <MenuItem>Projects</MenuItem>
                       <MenuItem>Posts</MenuItem>
-                      <MenuItem>Contact</MenuItem>
+                      <MenuItem><Link href="contact">Contact</Link></MenuItem>
                     </MenuList>
                   </>
                 )}
