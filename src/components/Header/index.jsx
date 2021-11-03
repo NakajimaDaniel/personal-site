@@ -8,9 +8,9 @@ import { useDimensions } from '../../hooks/useDimensions';
 
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
-import { Container, Box, useColorModeValue, Flex, Spacer, Image, Button, useColorMode, Menu, MenuButton, IconButton, MenuList, MenuItem } from '@chakra-ui/react';
+import { Container, Box, useColorModeValue, Flex, Spacer, Image, Button, useColorMode, Menu, MenuButton, IconButton, MenuList, MenuItem, Icon } from '@chakra-ui/react';
 
-
+import { IoMdClose } from 'react-icons/io'
 
 export function Header() {
 
@@ -73,15 +73,19 @@ export function Header() {
                   <>
                     <MenuButton 
                       as={IconButton}
-                      icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                      icon={isOpen ? <Icon as={IoMdClose} /> : <HamburgerIcon />}
                     /> 
                     <MenuList>
                       <Link href="/">
-                      <MenuItem>Home</MenuItem>
+                        <MenuItem>Home</MenuItem>
                       </Link>
-                      <MenuItem>Projects</MenuItem>
+                      <Link href="projects">
+                        <MenuItem>Projects</MenuItem>
+                      </Link>
                       <MenuItem>Posts</MenuItem>
-                      <MenuItem><Link href="contact">Contact</Link></MenuItem>
+                      <Link href="contact">
+                        <MenuItem>Contact</MenuItem>
+                      </Link>
                     </MenuList>
                   </>
                 )}
