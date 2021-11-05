@@ -19,7 +19,7 @@ export default function Projects() {
         <Flex pt="5" direction="column" w="440" align="center">
           <Text pb="3" fontWeight="semibold" >NX-Weather</Text>
           <Box pb="5">
-            <Image src="nxweather.svg" alt="nxweather" /> 
+            <Image src="nxweather.png" alt="nxweather" w={[440,440,440,440,440, 440,837]} /> 
           </Box>
           <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
               A web app for visualizing current and forecast weather. With search function powered by Algolia. 
@@ -37,7 +37,7 @@ export default function Projects() {
         <Flex pt="5" direction="column" align="center">
           <Text pb="3" fontWeight="semibold">LetMeAsk</Text>
           <Box pb="5">
-            <Image src="letmeask.svg" alt="letmeask" /> 
+            <Image src="letmeask.png" alt="letmeask"  w={[440,440,440,440,440,440,837]} /> 
           </Box>
           <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
             Create a room, share and ask questions.  LetMeAsk is a simple web app built using Firebase (realtime database /authentication).
