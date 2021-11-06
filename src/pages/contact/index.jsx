@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 import { PageAnimation } from "../../components/PageAnimation"
 
-export default function contact() {
+export default function Contact() {
 
   const router = useRouter();
 
@@ -30,7 +30,7 @@ export default function contact() {
           borderRadius="4"
           _hover={{ bg: "#FFE27A" }}
           onClick={() => router.push("mailto:nakajimadaniel96@gmail.com")}
-          
+
         >
           Contact me
         </Box>
