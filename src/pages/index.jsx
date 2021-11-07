@@ -18,7 +18,7 @@ export default function Page() {
           Daniel Nakajima !
         </Text>
         <Text fontSize={["xl"]} w={["100%","60%"]}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac scelerisque ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+          I'm a front end developer passionate about technology, currently looking for new opportunities !
         </Text>
         
       </Box>
