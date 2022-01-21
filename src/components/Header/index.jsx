@@ -37,13 +37,9 @@ export function Header() {
             <Box pr="5">
               <Link href="projects">Projects</Link>
             </Box>
-            {/* <Box pr="5">
-              Posts
-            </Box> */}
             <Box pr="5">
               <Link href="contact">Contact</Link>
             </Box>
-
             <Box pr="10">
               <Button onClick={toggleColorMode}>
                 {colorMode === "dark" ? (
@@ -82,7 +78,6 @@ export function Header() {
                       <Link href="projects">
                         <MenuItem>Projects</MenuItem>
                       </Link>
-                      {/* <MenuItem>Posts</MenuItem> */}
                       <Link href="contact">
                         <MenuItem>Contact</MenuItem>
                       </Link>
