@@ -18,28 +18,28 @@ export function Header() {
   const { width, height } = useDimensions();
 
   return (
-    <Container maxW="100vw" w="100%" p="0" bg={colorMode === "dark" ? "blue.transparent" : "white.transparent" }  position="fixed" top="0" pt="5" pl="5" pb="3" zIndex={20} backdropFilter="saturate(180%) blur(5px)" >
+    <Container maxW="100vw" w="100%" p="0" bg={colorMode === "dark" ? "blue.transparent" : "white.transparent"} position="fixed" top="0" pt="5" pl="5" pb="3" zIndex={20} backdropFilter="saturate(180%) blur(5px)" >
       <Flex align="center">
         <Box>
           {colorMode === "dark" ? (
-            <Image src="logo.svg" w={["80%","100%"]} />
+            <Image src="logo.svg" w={["80%", "100%"]} />
           ) : (
-            <Image src="logo-dark.svg" w={["80%","100%"]} />
+            <Image src="logo-dark.svg" w={["80%", "100%"]} />
           )}
-          
+
         </Box>
         <Spacer />
-        { width >= 655 ? (
+        {width >= 655 ? (
           <>
             <Box pr="5">
-            <Link href="/">Home</Link>
+              <Link href="/">Home</Link>
             </Box>
             <Box pr="5">
-            <Link href="projects">Projects</Link>
+              <Link href="projects">Projects</Link>
             </Box>
-            <Box pr="5">
+            {/* <Box pr="5">
               Posts
-            </Box>
+            </Box> */}
             <Box pr="5">
               <Link href="contact">Contact</Link>
             </Box>
@@ -69,12 +69,12 @@ export function Header() {
 
             <Box pr="5">
               <Menu>
-                {({isOpen}) => (
+                {({ isOpen }) => (
                   <>
-                    <MenuButton 
+                    <MenuButton
                       as={IconButton}
                       icon={isOpen ? <Icon as={IoMdClose} /> : <HamburgerIcon />}
-                    /> 
+                    />
                     <MenuList>
                       <Link href="/">
                         <MenuItem>Home</MenuItem>
@@ -82,7 +82,7 @@ export function Header() {
                       <Link href="projects">
                         <MenuItem>Projects</MenuItem>
                       </Link>
-                      <MenuItem>Posts</MenuItem>
+                      {/* <MenuItem>Posts</MenuItem> */}
                       <Link href="contact">
                         <MenuItem>Contact</MenuItem>
                       </Link>
@@ -93,7 +93,7 @@ export function Header() {
             </Box>
 
           </>
-        ) }
+        )}
 
 
 
