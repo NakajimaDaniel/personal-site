@@ -26,7 +26,7 @@ export default function Contact() {
             bg="#FFC700"
             borderRadius="4"
             _hover={{ bg: "#FFE27A" }}
-            onClick={() => router.push("mailto:nakajimadaniel96@gmail.com")}
+            onClick={() => router.push("mailto:nakajimadaniel@outlook.com")}
             sx={{ 'transition': '0.3s' }}
           >
             <Text fontWeight="bold" color="#656565" >Contact me</Text>
@@ -38,7 +38,7 @@ export default function Contact() {
               </Link>
             </Box>
             <Box as="button" _hover={{ color: "#FFE27A" }} sx={{ 'transition': '0.3s' }}>
-              <Link href="https://www.linkedin.com/in/daniel-akio-nakajima-745319146/">
+              <Link href="https://www.linkedin.com/in/danielnakajima/">
                 <Icon as={FaLinkedinIn} w={7} h={7} />
               </Link>
             </Box>
