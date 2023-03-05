@@ -21,7 +21,7 @@ export default function Page() {
           Daniel Nakajima !
         </Text>
         <Text fontSize={["xl"]} w={["100%", "60%"]}>
-          I'm a front end developer passionate about technology, currently looking for new opportunities !
+          I'm a automation/software developer passionate about technology, currently looking for new opportunities !
         </Text>
       </Box>
 
@@ -31,17 +31,18 @@ export default function Page() {
         </Text>
         <Flex w="100%" flexDirection="column" justifyItems="center">
           <Text fontSize={['lg']} pb={[2]}>
-            I'm an Automation Technician, working every day mostly in an industrial environment,
-            developing systems for machines and user interfaces (HMI) since 2017.
+            I'm an Automation Analyst/Digitalization Specialist, and I work on developing web-based interfaces for dosimetry, 
+            digitizing reports, implementing MES Systems, and developing and maintaining stored procedures, views, and tables in SQL Server on a daily basis.
           </Text>
           <Text fontSize={['lg']} pb={[2]}>
-            I love working with technology, so in 2019 I get particularly interested in software (web and mobile) development.
+            With 5 years of work experience in the Automation Industry, most of my experience involved programming PLCs and HMI/SCADA for OEM machinery, 
+            providing assistance and support to customers (both local and remote), and writing manuals and technical documentation.
           </Text>
           <Text fontSize={['lg']} pb={[2]}>
-            Passionate about technology and learning new stuffs, i'm currently looking for web developer position.
+            I enjoy working with technology, and in 2019, I became particularly interested in software development and programming languages, including Python, JavaScript, HTML, and CSS.
           </Text>
           <Text fontSize={['lg']} pb={[2]}>
-            I have experience with front end (React) and mobile (React Native) and some basic knowledge in PHP and Elixir (Im currently learning).
+            I enjoy playing video games 🎮 and listening to music 🎧 in my free time! If you have any questions, feel free to get in touch with me.
           </Text>
         </Flex>
       </Box>
