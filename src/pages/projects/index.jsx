@@ -1,5 +1,6 @@
 
 
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Container, Box, Text, Flex, Image, SimpleGrid, useColorMode, Link  } from '@chakra-ui/react'
 import { PageAnimation } from '../../components/PageAnimation'
 
@@ -16,17 +17,18 @@ export default function Projects() {
         </Text>
       </Box>
       <SimpleGrid columns={[1,1,1,2]} spacing={10} align="center">
-        <Flex pt="5" direction="column" w="440" align="center">
-          <Text pb="3" fontWeight="semibold" >NX-Weather</Text>
-          <Box pb="5">
-            <Link  href='https://nx-weather.vercel.app/' isExternal>
-              <Image src="nxweather.png" alt="nxweather" w={[440,440,440,440,440, 440,837]} borderRadius={10} /> 
+
+        <Flex pt="5" direction="column" w="440" align="center" >
+          <Box w={[440,440,440,440,440, 440,837]} >
+            <Link  href='https://nx-weather.vercel.app/' pb='3' isExternal>
+              NX-Weather <ExternalLinkIcon mx='2px' />
             </Link>
+            <Image src="nxweather.png" alt="nxweather" borderRadius={10} />
+            <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mt="5" mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
+                A web app for visualizing current and forecast weather. With search function powered by Algolia. 
+                Weather data from OpenWeather.
+            </Text>
           </Box>
-          <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
-              A web app for visualizing current and forecast weather. With search function powered by Algolia. 
-              Weather data from OpenWeather.
-          </Text>
           <Flex direction="row" align="center">
             <Text pr="3" fontWeight="light" >HTML</Text>
             <Text pr="3" fontWeight="light">CSS</Text>
@@ -37,16 +39,15 @@ export default function Projects() {
         </Flex>
 
         <Flex pt="5" direction="column" align="center">
-          <Text pb="3" fontWeight="semibold">LetMeAsk</Text>
-          <Box pb="5">
-            <Link href='http://letmeask-kappa-swart.vercel.app/' isExternal>
-              <Image src="letmeask.png" alt="letmeask"  w={[440,440,440,440,440,440,837]} /> 
+          <Box w={[440,440,440,440,440,440,837]}>
+            <Link href='http://letmeask-kappa-swart.vercel.app/'  pb='3' isExternal>
+              LetMeAsk <ExternalLinkIcon mx='2px' /> 
             </Link>
+            <Image src="letmeask.png" alt="letmeask" borderRadius={10} />
+            <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mt="5" mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
+              Create a room, share and ask questions.  LetMeAsk is a simple web app built using Firebase (realtime database /authentication).
+            </Text>
           </Box>
-          <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
-            Create a room, share and ask questions.  LetMeAsk is a simple web app built using Firebase (realtime database /authentication).
-
-          </Text>
           <Flex direction="row" pb="5">
             <Text pr="3" fontWeight="light" >HTML</Text>
             <Text pr="3" fontWeight="light">CSS</Text>
@@ -58,16 +59,15 @@ export default function Projects() {
         </Flex>
 
         <Flex pt="5" direction="column" align="center">
-          <Text pb="3" fontWeight="semibold">Up Report</Text>
-          <Box pb="5">
-            <Link href='https://up-report.vercel.app/' isExternal>
-              <Image src="upreport.png" alt="upreport"  w={[440,440,440,440,440,440,837]} borderRadius={10} /> 
+          <Box w={[440,440,440,440,440,440,837]}>
+            <Link href='https://up-report.vercel.app/' pb='3' isExternal>
+              Up Report <ExternalLinkIcon mx='2px' />
             </Link>
+            <Image src="upreport.png" alt="upreport" borderRadius={10} /> 
+            <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mt="5" mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
+              Keep on track on your expenses. Up Report is a web application that help you control your finances.  
+            </Text>
           </Box>
-          <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
-            Keep on track on your expenses. Up Report is a web application that help you control your finances.  
-
-          </Text>
           <Flex direction="row" pb="5">
             <Text pr="3" fontWeight="light" >HTML</Text>
             <Text pr="3" fontWeight="light">CSS</Text>
