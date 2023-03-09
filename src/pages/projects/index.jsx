@@ -20,10 +20,10 @@ export default function Projects() {
 
         <Flex pt="5" direction="column" w="440" align="center" >
           <Box w={[440,440,440,440,440, 440,837]} >
-            <Link  href='https://nx-weather.vercel.app/' pb='3' isExternal>
+            <Link  href='https://nx-weather.vercel.app/' isExternal>
               NX-Weather <ExternalLinkIcon mx='2px' />
             </Link>
-            <Image src="nxweather.png" alt="nxweather" borderRadius={10} />
+            <Image src="nxweather.png" alt="nxweather" borderRadius={10} mt="5"/>
             <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mt="5" mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
                 A web app for visualizing current and forecast weather. With search function powered by Algolia. 
                 Weather data from OpenWeather.
@@ -43,7 +43,7 @@ export default function Projects() {
             <Link href='http://letmeask-kappa-swart.vercel.app/'  pb='3' isExternal>
               LetMeAsk <ExternalLinkIcon mx='2px' /> 
             </Link>
-            <Image src="letmeask.png" alt="letmeask" borderRadius={10} />
+            <Image src="letmeask.png" alt="letmeask" borderRadius={10} mt="5" />
             <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mt="5" mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
               Create a room, share and ask questions.  LetMeAsk is a simple web app built using Firebase (realtime database /authentication).
             </Text>
@@ -63,7 +63,7 @@ export default function Projects() {
             <Link href='https://up-report.vercel.app/' pb='3' isExternal>
               Up Report <ExternalLinkIcon mx='2px' />
             </Link>
-            <Image src="upreport.png" alt="upreport" borderRadius={10} /> 
+            <Image src="upreport.png" alt="upreport" borderRadius={10} mt="5" /> 
             <Text maxW="440" w="100%" bg={ colorMode === "dark" ? "blue.800" : "white.700" } mt="5" mb="5" pl="2" pr="2" pt="2" pb="2" borderRadius="5"> 
               Keep on track on your expenses. Up Report is a web application that help you control your finances.  
             </Text>
