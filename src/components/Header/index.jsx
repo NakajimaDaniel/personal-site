@@ -15,9 +15,13 @@ export function Header() {
       <Flex align="center">
         <Box>
           {colorMode === "dark" ? (
-            <Image src="logo.svg" w={["80%", "100%"]} />
+            <Link href="/">
+              <Image src="logo.svg" w={["80%", "100%"]} />
+            </Link>
           ) : (
-            <Image src="logo-dark.svg" w={["80%", "100%"]} />
+            <Link href="/">
+              <Image src="logo-dark.svg" w={["80%", "100%"]} />
+            </Link>
           )}
 
         </Box>
