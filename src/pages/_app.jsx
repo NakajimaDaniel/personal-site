@@ -11,17 +11,19 @@ import { repositoryName } from '../prismicio'
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
-      <PrismicPreview repositoryName={repositoryName}>
+
         <ChakraProvider theme={theme}>
           <Layout>
             <AnimatePresence exitBeforeEnter initial={true}>
-              <Component {...pageProps} key={router.route} />
+              <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
+                <PrismicPreview repositoryName={repositoryName}>
+                  <Component {...pageProps} key={router.route} />
+                </PrismicPreview>
+              </PrismicProvider>
             </AnimatePresence>
           </Layout> 
         </ChakraProvider>
-      </PrismicPreview>
-    </PrismicProvider>
+
   )
 }
 
