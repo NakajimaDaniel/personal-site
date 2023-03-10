@@ -1,1 +1,58 @@
-{}
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "radio"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "text_block$85d9e44a-ee1a-4c61-8c4c-32221a6021e0",
+        "name": "text_block",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Steel"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Culpa sint est ex velit non deserunt duis ut Lorem pariatur. Laborum anim pariatur aliqua commodo quis ea excepteur nulla aliquip aliquip culpa ea. Ad incididunt sit est."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "date",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "type": "Date",
+                    "value": "2017-07-25"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

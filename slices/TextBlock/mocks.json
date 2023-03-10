@@ -29,7 +29,16 @@
     "items": [
       {
         "__TYPE__": "GroupItemContent",
-        "value": []
+        "value": [
+          [
+            "date",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Date",
+              "value": "2015-03-04"
+            }
+          ]
+        ]
       }
     ]
   }

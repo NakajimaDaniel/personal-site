@@ -7,7 +7,24 @@ type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
 /** Content for BlogPost documents */
-type BlogpostDocumentData = Record<string, never>;
+interface BlogpostDocumentData {
+    /**
+     * Slice Zone field in *BlogPost*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blogpost.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<BlogpostDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *BlogPost → Slice Zone*
+ *
+ */
+type BlogpostDocumentDataSlicesSlice = TextBlockSlice;
 /**
  * BlogPost document from Prismic
  *
@@ -17,7 +34,7 @@ type BlogpostDocumentData = Record<string, never>;
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BlogpostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<BlogpostDocumentData>, "blogpost", Lang>;
+export type BlogpostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogpostDocumentData>, "blogpost", Lang>;
 export type AllDocumentTypes = BlogpostDocument;
 /**
  * Primary content in TextBlock → Primary
@@ -46,6 +63,22 @@ interface TextBlockSliceDefaultPrimary {
     description: prismicT.RichTextField;
 }
 /**
+ * Item in TextBlock → Items
+ *
+ */
+export interface TextBlockSliceDefaultItem {
+    /**
+     * date field in *TextBlock → Items*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.items[].date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+}
+/**
  * Default variation for TextBlock Slice
  *
  * - **API ID**: `default`
@@ -53,7 +86,7 @@ interface TextBlockSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
+export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, Simplify<TextBlockSliceDefaultItem>>;
 /**
  * Slice variation for *TextBlock*
  *
@@ -73,6 +106,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefaultItem, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }
