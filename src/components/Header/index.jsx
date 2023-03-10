@@ -28,13 +28,16 @@ export function Header() {
         <Spacer />
         {width >= 655 ? (
           <>
-            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 18]} >
+            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]} >
               <Link href="/">Home</Link>
             </Box>
-            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 18]}>
+            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]}>
               <Link href="projects">Projects</Link>
             </Box>
-            <Box pr={[10, 10, 10, 20, 35]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 18]}>
+            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]}>
+              <Link href="blog">Blog</Link>
+            </Box>
+            <Box pr={[10, 10, 10, 20, 50]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]}>
               <Link href="contact">Contact</Link>
             </Box>
             <Box pr="10">
@@ -74,6 +77,9 @@ export function Header() {
                       </Link>
                       <Link href="projects">
                         <MenuItem>Projects</MenuItem>
+                      </Link>
+                      <Link href="blog">
+                        <MenuItem>Blog</MenuItem>
                       </Link>
                       <Link href="contact">
                         <MenuItem>Contact</MenuItem>
