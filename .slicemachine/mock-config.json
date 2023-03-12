@@ -3,7 +3,12 @@
     "blogpost": {}
   },
   "slices": {
-    "TextBlock": {
+    "Header": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Text": {
       "default": {
         "primary": {}
       }

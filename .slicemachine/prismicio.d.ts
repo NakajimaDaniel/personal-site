@@ -24,7 +24,7 @@ interface BlogpostDocumentData {
  * Slice for *BlogPost → Slice Zone*
  *
  */
-type BlogpostDocumentDataSlicesSlice = TextBlockSlice;
+type BlogpostDocumentDataSlicesSlice = never;
 /**
  * BlogPost document from Prismic
  *
@@ -40,13 +40,13 @@ export type AllDocumentTypes = BlogpostDocument;
  * Primary content in Header → Primary
  *
  */
-interface TextBlockSliceDefaultPrimary {
+interface HeaderSliceDefaultPrimary {
     /**
      * Title field in *Header → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: text_block.primary.title
+     * - **API ID Path**: header.primary.title
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
@@ -54,19 +54,19 @@ interface TextBlockSliceDefaultPrimary {
     /**
      * date field in *Header → Primary*
      *
-     * - **Field Type**: Date
+     * - **Field Type**: Timestamp
      * - **Placeholder**: *None*
-     * - **API ID Path**: text_block.primary.date
-     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     * - **API ID Path**: header.primary.date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
      *
      */
-    date: prismicT.DateField;
+    date: prismicT.TimestampField;
     /**
      * banner field in *Header → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: text_block.primary.banner
+     * - **API ID Path**: header.primary.banner
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
@@ -76,69 +76,69 @@ interface TextBlockSliceDefaultPrimary {
  * Default variation for Header Slice
  *
  * - **API ID**: `default`
- * - **Description**: `TextBlock`
+ * - **Description**: `Header`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
+export type HeaderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeaderSliceDefaultPrimary>, never>;
 /**
  * Slice variation for *Header*
  *
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type HeaderSliceVariation = HeaderSliceDefault;
 /**
  * Header Shared Slice
  *
- * - **API ID**: `text_block`
- * - **Description**: `TextBlock`
+ * - **API ID**: `header`
+ * - **Description**: `Header`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSlice = prismicT.SharedSlice<"text_block", TextBlockSliceVariation>;
+export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
 /**
- * Primary content in TextBlock → Primary
+ * Item in Text → Items
  *
  */
-interface TextBlockSliceDefaultPrimary {
+export interface TextSliceDefaultItem {
     /**
-     * text field in *TextBlock → Primary*
+     * text field in *Text → Items*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: text_block.primary.text
+     * - **API ID Path**: text.items[].text
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
     text: prismicT.RichTextField;
 }
 /**
- * Default variation for TextBlock Slice
+ * Default variation for Text Slice
  *
  * - **API ID**: `default`
- * - **Description**: `TextBlock`
+ * - **Description**: `Text`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
+export type TextSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<TextSliceDefaultItem>>;
 /**
- * Slice variation for *TextBlock*
+ * Slice variation for *Text*
  *
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type TextSliceVariation = TextSliceDefault;
 /**
- * TextBlock Shared Slice
+ * Text Shared Slice
  *
- * - **API ID**: `text_block`
- * - **Description**: `TextBlock`
+ * - **API ID**: `text`
+ * - **Description**: `Text`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSlice = prismicT.SharedSlice<"text_block", TextBlockSliceVariation>;
+export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, TextSliceDefaultItem, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

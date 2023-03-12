@@ -2,11 +2,11 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 
 /**
- * @typedef {import("@prismicio/client").Content.TextBlockSlice} TextBlockSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<TextBlockSlice>} TextBlockProps
- * @param { TextBlockProps }
+ * @typedef {import("@prismicio/client").Content.TextSlice} TextSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<TextSlice>} TextProps
+ * @param { TextProps }
  */
-const TextBlock = ({ slice }) => (
+const Text = ({ slice }) => (
   <section>
     <span className="title">
       {
@@ -33,4 +33,4 @@ const TextBlock = ({ slice }) => (
   </section>
 )
 
-export default TextBlock
+export default Text

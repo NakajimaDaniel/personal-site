@@ -1,15 +1,15 @@
 {
-  "id": "text_block",
+  "id": "header",
   "type": "SharedSlice",
   "name": "Header",
-  "description": "TextBlock",
+  "description": "Header",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "TextBlock",
+      "description": "Header",
       "primary": {
         "title": {
           "type": "StructuredText",
@@ -20,7 +20,7 @@
           }
         },
         "date": {
-          "type": "Date",
+          "type": "Timestamp",
           "config": {
             "label": "date",
             "placeholder": ""
