@@ -37,12 +37,12 @@ type BlogpostDocumentDataSlicesSlice = TextBlockSlice;
 export type BlogpostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogpostDocumentData>, "blogpost", Lang>;
 export type AllDocumentTypes = BlogpostDocument;
 /**
- * Primary content in TextBlock → Primary
+ * Primary content in Header → Primary
  *
  */
 interface TextBlockSliceDefaultPrimary {
     /**
-     * Title field in *TextBlock → Primary*
+     * Title field in *Header → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: This is where it all begins...
@@ -52,31 +52,64 @@ interface TextBlockSliceDefaultPrimary {
      */
     title: prismicT.TitleField;
     /**
-     * Description field in *TextBlock → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: text_block.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-}
-/**
- * Item in TextBlock → Items
- *
- */
-export interface TextBlockSliceDefaultItem {
-    /**
-     * date field in *TextBlock → Items*
+     * date field in *Header → Primary*
      *
      * - **Field Type**: Date
      * - **Placeholder**: *None*
-     * - **API ID Path**: text_block.items[].date
+     * - **API ID Path**: text_block.primary.date
      * - **Documentation**: https://prismic.io/docs/core-concepts/date
      *
      */
     date: prismicT.DateField;
+    /**
+     * banner field in *Header → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.banner
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    banner: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Header Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TextBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Header*
+ *
+ */
+type TextBlockSliceVariation = TextBlockSliceDefault;
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `text_block`
+ * - **Description**: `TextBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextBlockSlice = prismicT.SharedSlice<"text_block", TextBlockSliceVariation>;
+/**
+ * Primary content in TextBlock → Primary
+ *
+ */
+interface TextBlockSliceDefaultPrimary {
+    /**
+     * text field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
 }
 /**
  * Default variation for TextBlock Slice
@@ -86,7 +119,7 @@ export interface TextBlockSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, Simplify<TextBlockSliceDefaultItem>>;
+export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
 /**
  * Slice variation for *TextBlock*
  *
@@ -106,6 +139,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefaultItem, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

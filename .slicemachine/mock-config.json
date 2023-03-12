@@ -3,6 +3,10 @@
     "blogpost": {}
   },
   "slices": {
-    "TextBlock": {}
+    "TextBlock": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

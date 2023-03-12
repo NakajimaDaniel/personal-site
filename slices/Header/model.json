@@ -1,7 +1,7 @@
 {
   "id": "text_block",
   "type": "SharedSlice",
-  "name": "TextBlock",
+  "name": "Header",
   "description": "TextBlock",
   "variations": [
     {
@@ -11,13 +11,27 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "TextBlock",
       "primary": {
-        "text": {
+        "title": {
           "type": "StructuredText",
           "config": {
-            "label": "text",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "date": {
+          "type": "Date",
+          "config": {
+            "label": "date",
+            "placeholder": ""
+          }
+        },
+        "banner": {
+          "type": "Image",
+          "config": {
+            "label": "banner",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

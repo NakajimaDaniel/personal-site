@@ -3,24 +3,13 @@
     "__TYPE__": "SharedSliceContent",
     "variation": "default",
     "primary": {
-      "title": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "heading1",
-            "content": {
-              "text": "Mainly"
-            }
-          }
-        ]
-      },
-      "description": {
+      "text": {
         "__TYPE__": "StructuredTextContent",
         "value": [
           {
             "type": "paragraph",
             "content": {
-              "text": "Incididunt excepteur et tempor qui sunt pariatur irure consectetur commodo duis culpa sunt."
+              "text": "Minim dolor nulla consectetur minim cupidatat exercitation velit ut tempor magna."
             }
           }
         ]
@@ -29,16 +18,7 @@
     "items": [
       {
         "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "date",
-            {
-              "__TYPE__": "FieldContent",
-              "type": "Date",
-              "value": "2015-03-04"
-            }
-          ]
-        ]
+        "value": []
       }
     ]
   }
