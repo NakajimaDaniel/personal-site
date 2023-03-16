@@ -13,15 +13,15 @@ function MyApp({ Component, pageProps, router }) {
   return (
 
         <ChakraProvider theme={theme}>
-          <Layout>
-            <AnimatePresence exitBeforeEnter initial={true}>
+<Layout>
               <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
                 <PrismicPreview repositoryName={repositoryName}>
                   <Component {...pageProps} key={router.route} />
                 </PrismicPreview>
               </PrismicProvider>
-            </AnimatePresence>
-          </Layout> 
+
+              <AnimatePresence exitBeforeEnter initial={true}></AnimatePresence>
+              </Layout>
         </ChakraProvider>
 
   )

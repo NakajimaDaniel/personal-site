@@ -7,7 +7,7 @@ export function Layout({ children }) {
   return (
     <Box>
       <Head>
-        <title>Daniel Nakajima | Personal Site</title>
+        <title>Daniel Nakajima</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <Header />

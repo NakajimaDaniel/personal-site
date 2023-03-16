@@ -1,25 +1,22 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
+import { Box } from '@chakra-ui/react'
 
 /**
- * @typedef {import("@prismicio/client").Content.TextSlice} TextSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<TextSlice>} TextProps
- * @param { TextProps }
+ * @typedef {import("@prismicio/client").Content.TextBlockSlice} TextBlockSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<TextBlockSlice>} TextBlockProps
+ * @param { TextBlockProps }
  */
 const Text = ({ slice }) => (
   <section>
-    <span className="title">
-      {
-        slice.primary.title ?
-        <PrismicRichText field={slice.primary.title}/>
-        : <h2>Template slice, update me!</h2>
-      }
-    </span>
     {
-      slice.primary.description ?
-      <PrismicRichText field={slice.primary.description}/>
-      : <p>start by editing this slice from inside Slice Machine!</p>
+      slice?.items?.map((item, i) =>
+      <Box key={i} textAlign="left">
+        <PrismicRichText field={item.text}  />
+      </Box>
+      )
     }
+
     <style jsx>{`
         section {
           max-width: 600px;

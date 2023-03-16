@@ -3,9 +3,15 @@
     "blogpost": {}
   },
   "slices": {
-    "Header": {
+    "Image": {
       "default": {
         "primary": {}
+      }
+    },
+    "Code": {
+      "default": {
+        "primary": {},
+        "items": {}
       }
     },
     "Text": {

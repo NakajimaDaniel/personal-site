@@ -4,6 +4,7 @@ import { useDimensions } from '../../hooks/useDimensions';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Container, Box, Flex, Spacer, Image, Button, useColorMode, Menu, MenuButton, IconButton, MenuList, MenuItem, Icon } from '@chakra-ui/react';
 import { IoMdClose } from 'react-icons/io';
+import { ClientOnly } from '../ClientOnly';
 
 export function Header() {
 
@@ -15,37 +16,37 @@ export function Header() {
       <Flex align="center">
         <Box>
           {colorMode === "dark" ? (
-            <Link href="/">
-              <Image src="logo.svg" w={["80%", "100%"]} />
+            <Link href="/" passHref>
+              <Image src={"/" + "logo.svg"} w={["80%", "100%"]} alt="logo" />
             </Link>
           ) : (
-            <Link href="/">
-              <Image src="logo-dark.svg" w={["80%", "100%"]} />
+            <Link href="/" passHref>
+              <Image src={"/" + "logo-dark.svg"} w={["80%", "100%"]} alt="logo" />
             </Link>
           )}
 
         </Box>
         <Spacer />
-        {width >= 655 ? (
+        {width >= 900 ? (
           <>
-            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]} >
+            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[15, 15, 16]} >
               <Link href="/">Home</Link>
             </Box>
-            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]}>
-              <Link href="projects">Projects</Link>
+            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[15, 15, 16]}>
+              <Link href="/projects">Projects</Link>
             </Box>
-            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]}>
-              <Link href="blog">Blog</Link>
+            <Box pr={[15, 15, 20, 20, 20]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[15, 15, 16]}>
+              <Link href="/blog">Blog</Link>
             </Box>
-            <Box pr={[10, 10, 10, 20, 50]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[16, 16, 19]}>
-              <Link href="contact">Contact</Link>
+            <Box pr={[10, 10, 10, 20, 50]} _hover={{ color: "#FFE072" }} sx={{ 'transition': '0.3s' }} fontSize={[15, 15, 16]}>
+              <Link href="/contact">Contact</Link>
             </Box>
             <Box pr="10">
               <Button onClick={toggleColorMode}>
                 {colorMode === "dark" ? (
-                  <Image src="lightmode.svg" />
+                  <Image src={"/" + "lightmode.svg"} alt="moon logo" />
                 ) : (
-                  <Image src="darkmode.svg" />
+                  <Image src={"/" + "darkmode.svg"} alt="sun logo" />
                 )}
               </Button>
             </Box>
@@ -56,14 +57,15 @@ export function Header() {
             <Box pr="7">
               <Button onClick={toggleColorMode}>
                 {colorMode === "dark" ? (
-                  <Image src="lightmode.svg" />
+                  <Image src={"/" + "lightmode.svg"} alt="moon logo" />
                 ) : (
-                  <Image src="darkmode.svg" />
+                  <Image src={"/" + "darkmode.svg"} alt="sun logo" />
                 )}
               </Button>
             </Box>
 
             <Box pr="5">
+              <ClientOnly>
               <Menu>
                 {({ isOpen }) => (
                   <>
@@ -72,29 +74,27 @@ export function Header() {
                       icon={isOpen ? <Icon as={IoMdClose} /> : <HamburgerIcon />}
                     />
                     <MenuList>
-                      <Link href="/">
+                      <Link href="/" passHref>
                         <MenuItem>Home</MenuItem>
                       </Link>
-                      <Link href="projects">
+                      <Link href="/projects" passHref>
                         <MenuItem>Projects</MenuItem>
                       </Link>
-                      <Link href="blog">
+                      <Link href="/blog" replace passHref>
                         <MenuItem>Blog</MenuItem>
                       </Link>
-                      <Link href="contact">
+                      <Link href="/contact" passHref>
                         <MenuItem>Contact</MenuItem>
                       </Link>
                     </MenuList>
                   </>
                 )}
               </Menu>
+              </ClientOnly>
             </Box>
 
           </>
         )}
-
-
-
 
       </Flex>
 

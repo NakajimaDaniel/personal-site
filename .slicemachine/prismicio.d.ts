@@ -9,6 +9,28 @@ type Simplify<T> = {
 /** Content for BlogPost documents */
 interface BlogpostDocumentData {
     /**
+     * title field in *BlogPost*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blogpost.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * banner field in *BlogPost*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blogpost.banner
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    banner: prismicT.ImageField<never>;
+    /**
      * Slice Zone field in *BlogPost*
      *
      * - **Field Type**: Slice Zone
@@ -24,7 +46,7 @@ interface BlogpostDocumentData {
  * Slice for *BlogPost → Slice Zone*
  *
  */
-type BlogpostDocumentDataSlicesSlice = never;
+type BlogpostDocumentDataSlicesSlice = ImageSlice | CodeSlice | TextSlice;
 /**
  * BlogPost document from Prismic
  *
@@ -37,64 +59,93 @@ type BlogpostDocumentDataSlicesSlice = never;
 export type BlogpostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogpostDocumentData>, "blogpost", Lang>;
 export type AllDocumentTypes = BlogpostDocument;
 /**
- * Primary content in Header → Primary
+ * Primary content in Code → Primary
  *
  */
-interface HeaderSliceDefaultPrimary {
+interface CodeSliceDefaultPrimary {
     /**
-     * Title field in *Header → Primary*
+     * code field in *Code → Primary*
      *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: header.primary.title
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: code.primary.code
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    title: prismicT.TitleField;
+    code: prismicT.RichTextField;
+}
+/**
+ * Default variation for Code Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Code`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CodeSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CodeSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Code*
+ *
+ */
+type CodeSliceVariation = CodeSliceDefault;
+/**
+ * Code Shared Slice
+ *
+ * - **API ID**: `code`
+ * - **Description**: `Code`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CodeSlice = prismicT.SharedSlice<"code", CodeSliceVariation>;
+/**
+ * Primary content in Image → Primary
+ *
+ */
+interface ImageSliceDefaultPrimary {
     /**
-     * date field in *Header → Primary*
-     *
-     * - **Field Type**: Timestamp
-     * - **Placeholder**: *None*
-     * - **API ID Path**: header.primary.date
-     * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
-     *
-     */
-    date: prismicT.TimestampField;
-    /**
-     * banner field in *Header → Primary*
+     * Image field in *Image → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: header.primary.banner
+     * - **API ID Path**: image.primary.image
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    banner: prismicT.ImageField<never>;
+    image: prismicT.ImageField<never>;
+    /**
+     * Caption field in *Image → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: caption
+     * - **API ID Path**: image.primary.caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    caption: prismicT.RichTextField;
 }
 /**
- * Default variation for Header Slice
+ * Default variation for Image Slice
  *
  * - **API ID**: `default`
- * - **Description**: `Header`
+ * - **Description**: `Image`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HeaderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeaderSliceDefaultPrimary>, never>;
+export type ImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ImageSliceDefaultPrimary>, never>;
 /**
- * Slice variation for *Header*
+ * Slice variation for *Image*
  *
  */
-type HeaderSliceVariation = HeaderSliceDefault;
+type ImageSliceVariation = ImageSliceDefault;
 /**
- * Header Shared Slice
+ * Image Shared Slice
  *
- * - **API ID**: `header`
- * - **Description**: `Header`
+ * - **API ID**: `image`
+ * - **Description**: `Image`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
+export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
 /**
  * Item in Text → Items
  *
@@ -139,6 +190,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, TextSliceDefaultItem, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, CodeSliceDefaultPrimary, CodeSliceDefault, CodeSliceVariation, CodeSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultItem, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }
