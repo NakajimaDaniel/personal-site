@@ -1,39 +1,12 @@
 import { Box, Container, Text } from "@chakra-ui/react";
-
 import { createClient } from '../../prismicio'
-import { components } from '../../../slices'
-import { PrismicLink, PrismicText, SliceZone } from '@prismicio/react'
-
 import { PageAnimation } from "../../components/PageAnimation";
 import { Post } from "../../components/Post";
 import { useDimensions } from "../../hooks/useDimensions";
 
-/*
-export default function Blog() {
-
-  return (
-    <PageAnimation>
-      <Container maxW="100vw" w="100%" mt="20">
-        <Box pt="6" pl="10" pb="10">
-          <Text fontWeight="bold" fontSize="2xl">
-            Blog
-          </Text>
-        </Box>
-
-        <Box pt="6" pl="10" pb="10">
-          <Text>Title</Text>
-          <Text>Author</Text>
-        </Box>
-
-      </Container>
-    </PageAnimation>
-  )
-
-} */
-
 export default function Blog({ page }) {
 
-    const { width, height } = useDimensions();
+    const { width } = useDimensions();
 
     const posts = page.map(val => {
       return {
