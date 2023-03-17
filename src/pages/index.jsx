@@ -15,14 +15,15 @@ export default function Page() {
     <Container mt="20" maxW="100vw" w="100%">
       <Box pt="20" pl={[2, 4, 10, 20]} mb={[15, 20]} >
         <Text fontSize={['2xl', '3xl']}>
-          Hi, my name is
+          Hi,
         </Text>
         <Text fontSize={["4xl", "5xl"]} fontWeight="bold" pb="3">
-          Daniel Nakajima !
+          I’ am Daniel ! 
         </Text>
-        <Text fontSize={["xl"]} w={["100%", "60%"]}>
+        <Text fontSize={["xl"]} w={["100%", "50%"]}>
           I'm a automation/software developer passionate about technology, currently looking for new opportunities !
         </Text>
+        <Image src="separator.png" alt=""/>
       </Box>
 
       <Box pt="20" pl={[2, 4, 10, 20]} w={["100%"]} mb={[10]} pr={[2]} >
