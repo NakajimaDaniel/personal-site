@@ -33,24 +33,31 @@ export function Post({post}) {
   return (
     <>
     {width >= 650 ? (
-      <Flex mb="10" >
+      <Flex mb="10" direction="row">
+
         <VStack mr="10" >
           <Link href={"/blog/" + post.slug}> 
-              <PrismicNextImage field={post.banner} imgixParams={{ fit: 'crop', maxWidth:310, maxHeight: 200}} height="200" width="310" />
+            <Box height="200px" width="310px">
+              <PrismicNextImage field={post.banner} imgixParams={{ fit: 'crop', maxWidth:310, maxHeight: 200}}  />
+            </Box>
           </Link>
         </VStack>
-        <Box >
+
+        <Box>
           <VStack h="200"  alignItems="left">
             <Link href={"/blog/" + post.slug}>
-              <Text fontWeight="600" fontSize="xl" pt="5" _hover={{ textDecoration: "underline" }}>
-                <PrismicRichText  field={post.title}/>
-                
+              <Text fontWeight="600" fontSize="xl" _hover={{ textDecoration: "underline" }}>
+                <PrismicRichText  field={post.title}/>        
               </Text>
             </Link>
+            <Text w="90%">
+              {post.excerpt}
+            </Text>
             <Spacer />
             <Text>{ postFirstPublicationDate }</Text>
           </VStack>
         </Box>
+
       </Flex>
     ) : (
       <VStack mb="10">

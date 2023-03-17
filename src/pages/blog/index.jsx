@@ -3,23 +3,36 @@ import { createClient } from '../../prismicio'
 import { PageAnimation } from "../../components/PageAnimation";
 import { Post } from "../../components/Post";
 import { useDimensions } from "../../hooks/useDimensions";
+import * as prismicH from '@prismicio/helpers'
 
 export default function Blog({ page }) {
 
     const { width } = useDimensions();
 
-    const posts = page.map(val => {
-      return {
-        id: val.id,
-        title: val.data.title,
-        slug: val.uid,
-        banner: val.data.banner,
-        publicationDate: val.first_publication_date,
-        type: val.type
+    const post = page.map(val =>{
+      return val.data
+   })
 
-      }
-    })
+   const postSlices = post[0].slices
+      .filter(slice => {return slice.slice_type === "text"})
+      .map(val => {return val} )
 
+   const text = postSlices[0].items.map(val => prismicH.asText(val.text) ).join(" ").substring(0, 200);
+
+   const excerpt = text.length > 10 ? text.substring(0, text.lastIndexOf(" ")) + "…" : text;
+   
+   const posts = page.map(val => {
+    return {
+      id: val.id,
+      title: val.data.title,
+      slug: val.uid,
+      banner: val.data.banner,
+      publicationDate: val.first_publication_date,
+      type: val.type,
+      excerpt: excerpt
+
+    }
+  })
 
   return (
     <PageAnimation>
