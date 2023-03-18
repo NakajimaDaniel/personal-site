@@ -13,7 +13,7 @@ export function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { width } = useDimensions();
 
-  const [ isDarkMode, setIsDarkMode ] = useState();
+  const [ isDarkMode, setIsDarkMode ] = useState(true);
 
   function setColorMode() {
     const newColorMode = !isDarkMode;
