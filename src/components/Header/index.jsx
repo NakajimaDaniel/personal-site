@@ -6,14 +6,23 @@ import { Container, Box, Flex, Spacer, Image, Button, useColorMode, Menu, MenuBu
 import { IoMdClose } from 'react-icons/io';
 import { ClientOnly } from '../ClientOnly';
 import {motion} from 'framer-motion'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Header() {
 
   const { colorMode, toggleColorMode } = useColorMode();
   const { width } = useDimensions();
 
-  const [ isDarkMode, setIsDarkMode ] = useState(true);
+  const [ isDarkMode, setIsDarkMode ] = useState();
+
+  useEffect(() => {
+    if (colorMode === "dark") {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
+    }
+
+  },  [colorMode])
 
   function setColorMode() {
     const newColorMode = !isDarkMode;
