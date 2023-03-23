@@ -42,20 +42,21 @@ export default function Page() {
         </Flex>
   
         <Flex w="100%" flexDirection="column" justifyItems="center" align="center">
-          <Text fontSize={['lg']} pb={[2]} w="95%">
-            I'm an Automation Analyst/Digitalization Specialist, and I work on developing web-based interfaces for dosimetry, 
-            digitizing reports, implementing MES Systems, and developing and maintaining stored procedures, views, and tables in SQL Server on a daily basis.
+          <Text fontSize={['lg']} pb={[2]} w="70%">
+              I'm an Automation Analyst/Digitalization Specialist, and I work on developing web-based interfaces for dosimetry, 
+              digitizing reports, implementing MES Systems, and developing and maintaining stored procedures, views, and tables in SQL Server on a daily basis.
+
           </Text>
-          <Flex direction="row" w="95%"> 
-            <Text fontSize={['lg']} pb={[2]} pr="5">
+          <Text fontSize={['lg']} pb={[2]} w="70%">
               With 5 years of work experience in the Automation Industry, most of my experience involved programming PLCs and HMI/SCADA for OEM machinery, 
               providing assistance and support to customers (both local and remote), and writing manuals and technical documentation.
-            </Text>
-            <Text fontSize={['lg']} pb={[2]} pl="5">
+
+          </Text>
+          <Text fontSize={['lg']} pb={[2]} w="70%">
               I enjoy working with technology, and in 2019, I became particularly interested in software development and programming languages, including Python, JavaScript, HTML, and CSS.
               I enjoy playing video games 🎮 and listening to music 🎧 in my free time! If you have any questions, feel free to get in touch with me.
-            </Text>
-          </Flex>
+          </Text>
+
         </Flex>
         
       </Box>
@@ -103,12 +104,12 @@ export default function Page() {
       </Flex>
 
       <VStack mb="10">
-        <Flex direction={width >= 1000 ? "row" : "column"} gap={20}>
+        <Flex direction={width >= 1000 ? "row" : "column"} gap="450px">
           <Flex direction="column"> 
-            <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "330px" : "230px"} bg="#BEE8FF" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
+            <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "350px" : "230px"} bg="#BEE8FF" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ delay: 0.2 }}
               >
                 <Image src="upreport.png" alt="upreport" />
               </motion.div>
@@ -133,10 +134,10 @@ export default function Page() {
           </Flex>
           
           <Flex direction="column"> 
-            <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "330px" : "230px"} bg="#F5F5F5" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
+            <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "350px" : "230px"} bg="#F5F5F5" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ delay: 0.2 }}
               >
                 <Image src="nxweather.png" alt="upreport" />
               </motion.div>
