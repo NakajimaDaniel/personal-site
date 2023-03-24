@@ -104,7 +104,7 @@ export default function Page() {
       </Flex>
 
       <VStack mb="10">
-        <Flex direction={width >= 1000 ? "row" : "column"} gap="450px">
+        <Flex direction={width >= 1000 ? "row" : "column"} gap={[ "50px","50px","50px","100px", "450px"]}>
           <Flex direction="column"> 
             <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "350px" : "230px"} bg="#BEE8FF" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
               <motion.div
