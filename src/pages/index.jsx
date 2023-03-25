@@ -7,6 +7,7 @@ import { Icon } from "@chakra-ui/react"
 
 import { AiFillGithub } from "react-icons/ai"
 import { FaLinkedinIn } from "react-icons/fa"
+import ProjectCard from '../components/ProjectCard';
 
 export default function Page() {
 
@@ -105,62 +106,11 @@ export default function Page() {
 
       <VStack mb="10">
         <Flex direction={width >= 1000 ? "row" : "column"} gap={[ "50px","50px","50px","100px", "450px"]}>
-          <Flex direction="column"> 
-            <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "350px" : "230px"} bg="#BEE8FF" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <Image src="upreport.png" alt="upreport" />
-              </motion.div>
-            </Box>
-            <VStack w={width >= 470 ? "450px" : "350px"} h="180px" alignItems="left">
-              <Text fontWeight="bold" pb="2" fontSize="23px">
-                Up Report
-              </Text>
-              <Text pb="6" fontSize="18px">
-                Web application that helps you keep track your expenses. 
-              </Text>
-              <Spacer />
-              <Flex _hover={{ cursor: "pointer" }}>
-                <Text pr="6px" _hover={{ textDecoration: "underline" }}>
-                  Project Details
-                </Text>
-                <Text>
-                ➜
-                </Text>
-              </Flex>
-            </VStack>
-          </Flex>
-          
-          <Flex direction="column"> 
-            <Box w={width >= 470 ? "450px" : "350px"} h={width >= 470 ? "350px" : "230px"} bg="#F5F5F5" justifyItems="center" alignItems="center" p="10" mb="5" borderRadius="5" _hover={{ cursor: "pointer" }} >
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <Image src="nxweather.png" alt="upreport" />
-              </motion.div>
-            </Box>
-            <VStack w={width >= 470 ? "450px" : "350px"}  h="180px" alignItems="left">
-              <Text fontWeight="bold" pb="2" fontSize="23px" >
-                Nx Weather
-              </Text>
-              <Text pb="6" fontSize="18px">
-                Simple weather (current and forecast) web app.
-              </Text>
-              <Spacer />
-              <Flex _hover={{ cursor: "pointer" }} >
-                <Text pr="6px" _hover={{ textDecoration: "underline" }}>
-                  Project Details
-                </Text>
 
-                <Text>
-                ➜
-                </Text>
-              </Flex>
-            </VStack>
-          </Flex>
+          <ProjectCard src="/upreport.png" title="Up Report" description="Web application that helps you keep track your expenses. " background="#BEE8FF" href="/upreport"/>
+
+          <ProjectCard src="/nxweather.png" title="Nx Weather" description="Simple weather (current and forecast) web app. " background="#F5F5F5" href="/nxweather"/>
+   
         </Flex>
       </VStack>
       

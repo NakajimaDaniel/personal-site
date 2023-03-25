@@ -1,6 +1,7 @@
 
 import { Box, Container, Flex, Image, Text, useColorMode, VStack } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
+import ProjectCard from "../../components/ProjectCard";
 import { useDimensions } from '../../hooks/useDimensions'
 
 
@@ -47,11 +48,11 @@ export default function UpReport() {
           <Text>Vercel</Text>
         </Flex>
         
-        <Text fontWeight={"bold"} fontSize={"xl"} pb="2" >Motivation and Purpose</Text>
+        <Text fontWeight={"bold"} fontSize={"xl"} pb="8" >Motivation and Purpose</Text>
         <Text pb="10">
           The reason I started this project is to help manage and control all my expenses and make it easier to keep track all my transactions. 
         </Text>
-        <Text fontWeight={"bold"} fontSize={"xl"} pb="2">Funcionality</Text>
+        <Text fontWeight={"bold"} fontSize={"xl"} pb="8">Funcionality</Text>
         <Flex direction={width >= 900 ? "row" : "column"} gap={width >=900 ? "10%" : 0} >
           <Flex direction="column" pb="8" w={width >= 900 ? "40%" : "100%"}  gap={"5"}>
             <Text>
@@ -70,7 +71,7 @@ export default function UpReport() {
           <Image src="/upreport/upreport-ss.png" alt="" pb="8" w={width >= 900 ? "50%" : "100%"} h={width >= 900 ? "50%" : "100%"} mt={width >= 900 ? "10" : "0"} />
         </Flex>
 
-        <Text fontWeight={"bold"} fontSize={"xl"} pb="2">Challenges and Things I learned</Text>
+        <Text fontWeight={"bold"} fontSize={"xl"} pb="8">Challenges and Things I learned</Text>
         <Flex direction={width >= 900 ? "row" : "column"} gap={width >= 900 ? "10%" : 0} >
           <Flex direction="column" pb="8" w={width >= 900 ? "40%" : "100%"} gap={"5"} >
             <Text>
@@ -93,10 +94,10 @@ export default function UpReport() {
           Understand the NoSQL structure, my projects needs and put down in a schema truly helps overcome this challenge. 
         </Text>
         
-        <Text fontWeight={"bold"} fontSize={"xl"} pb="2" >
+        <Text fontWeight={"bold"} fontSize={"xl"} pb="8" >
           See also my other project: 
         </Text>
-
+        <ProjectCard src="/nxweather.png" title="Nx Weather" description="Simple weather (current and forecast) web app. " background="#F5F5F5" href="/nxweather"/>
 
       </Flex>
     </Container>
