@@ -1,5 +1,5 @@
 
-import { Box, Container, Flex, Image, Text, useColorMode, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Image, Text, useColorMode, VStack } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import ProjectCard from "../../components/ProjectCard";
 import { useDimensions } from '../../hooks/useDimensions'
@@ -13,7 +13,7 @@ export default function NxWeather() {
 
   return (
     <Container mt="20" maxW="100vw" w="100%">
-      <Flex direction={"column"} pl={width >= 500 ? "10" : "2"} pr={width >= 500 ? "10" : "2"}>
+      <Flex direction={"column"} pl={width >= 500 ? "20" : "2"} pr={width >= 500 ? "20" : "2"}>
         
         <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
           Nx Weather
@@ -40,15 +40,15 @@ export default function NxWeather() {
         </Text>
         
         <Text fontWeight={"bold"} fontSize={"xl"} pb="2">Tech Stack</Text>
-        <Flex gap="10" pb="10"  >
+        <Grid templateColumns={width >= 500 ? "repeat(5, 1fr)" : "repeat(3, 1fr)"} gap={4} pb={"8"} >
           <Text>React.js</Text>
           <Text>Next.js</Text>
           <Text>TailWindCSS</Text>
           <Text>MongoDB</Text>
           <Text>REST API</Text>
-        </Flex>
+        </Grid>
         
-        <Text fontWeight={"bold"} fontSize={"xl"} pb="8" >Project Purpose</Text>
+        <Text fontWeight={"bold"} fontSize={"xl"} pb="8">Project Purpose</Text>
         <Text pb="10">
           This project has 2 main pages and functionalities. The main page is the weather page that show all information from a specific city.
           The search function enable the user to search the city 
@@ -61,8 +61,8 @@ export default function NxWeather() {
           So, this time I decided to rebuild and improving this project with a new stack. 
         </Text>
         <Text fontWeight={"bold"} fontSize={"xl"} pb="8">Stack Definition</Text>
-        <Flex direction={"row"} gap="100px" alignItems={"center"}  >
-          <Flex direction={"column"} pb="8" gap={"2"} width="50%" >
+        <Flex direction={width >= 1000 ? "row" : "column"} gap="100px" alignItems={"center"} pb="20" mb="10" >
+          <Flex direction={"column"} pb="8" gap={"2"} width={width >= 1000 ? "50%" : "100%"} >
             <Text>
               React and Next made most sense for this application since how commom both tool/framework is used in web development with server side rendering, app routes and others Next.js functionalities. 
             </Text>
@@ -78,15 +78,15 @@ export default function NxWeather() {
               The implementation that we need is really simple (just retrieve the city name, id and country) so why not use the next.js api?
             </Text>
           </Flex>
-          <Image src="/nxweather/nxweather-ss1.png" alt=""  width="30%" height="30%" />
+          <Image src="/nxweather/nxweather-ss1.png" alt=""  width={width >= 1000 ? "30%" : "60%"} height={width >= 1000 ? "30%" : "60%"} />
         </Flex>
 
-        <Flex direction={"row"} gap={10} pt="10" >
-          <Image src="/nxweather/nxweather-ss2.png" alt="" width="50%" height="50%" borderRadius={10} sx={{boxShadow: "6px 2px 2px #cccc"}} />
-          <Image src="/nxweather/nxweather-ss3.png" alt="" width="50%" height="50%" mt="20" borderRadius={10} sx={{boxShadow: "6px 2px 2px #cccc"}} />
+        <Flex direction={width >= 1000 ? "row" : "column"} gap={10} pt="10" pb="20" mb="20" alignItems={"center"}>
+          <Image src="/nxweather/nxweather-ss2.png" alt="" width={width >= 1000 ? "50%" : "100%"} height={width >= 1000 ? "50%" : "100%"} borderRadius={10} sx={colorMode === "dark" ? {boxShadow: "6px 6px 2px #20293B"} : {boxShadow: "6px 6px 2px #cccc"}} />
+          <Image src="/nxweather/nxweather-ss3.png" alt="" width={width >= 1000 ? "50%" : "100%"} height={width >= 1000 ? "50%" : "100%"} borderRadius={10} sx={colorMode === "dark" ? {boxShadow: "6px 6px 2px #20293B"} : {boxShadow: "6px 6px 2px #cccc"}}/>
         </Flex>
         
-        <Text fontWeight={"bold"} fontSize={"xl"} pb="2" >
+        <Text fontWeight={"bold"} fontSize={"xl"} pb="8" >
           See also my other project: 
         </Text>
         <ProjectCard src="/upreport.png" title="Up Report" description="Web application that helps you keep track your expenses. " background="#BEE8FF" href="/upreport"/>
