@@ -28,11 +28,11 @@ export default function ProjectCard({ src, title, description, background, href 
    
     <VStack w={width >= 470 ? "450px" : "350px"} h="140px" alignItems="left">
       <Link href={href} passHref>
-        <Text fontWeight="bold" pb="2" fontSize="23px" _hover={{"textDecoration": "underline"}}>
+        <Text fontWeight="bold" pb="2" fontSize="21px" _hover={{"textDecoration": "underline"}}>
           {title}
         </Text>
       </Link>
-      <Text pb="3" fontSize="18px">
+      <Text pb="3" fontSize="17px">
         {description}
       </Text>
       <Spacer />
