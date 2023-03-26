@@ -1,5 +1,5 @@
 
-import { Box, Container, Flex, Image, Text, useColorMode, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Image, Text, useColorMode, VStack } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import ProjectCard from "../../components/ProjectCard";
 import { useDimensions } from '../../hooks/useDimensions'
@@ -13,7 +13,7 @@ export default function UpReport() {
 
   return (
     <Container mt="20" maxW="100vw" w="100%">
-      <Flex direction={"column"} pl={width >= 500 ? "10" : "2"} pr={width >= 500 ? "10" : "2"}>
+      <Flex direction={"column"} pl={width >= 500 ? "20" : "2"} pr={width >= 500 ? "20" : "2"}>
         
         <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
           Up Report
@@ -40,13 +40,13 @@ export default function UpReport() {
         </Text>
         
         <Text fontWeight={"bold"} fontSize={"xl"} pb="2">Tech Stack</Text>
-        <Flex gap="10" pb="10"  >
+        <Grid templateColumns={width >= 500 ? "repeat(5, 1fr)" : "repeat(3, 1fr)"} gap={4} pb={"8"}  >
           <Text>React.js</Text>
           <Text>Next.js</Text>
           <Text>Firebase</Text>
           <Text>ChakraUI</Text>
           <Text>Vercel</Text>
-        </Flex>
+        </Grid>
         
         <Text fontWeight={"bold"} fontSize={"xl"} pb="8" >Motivation and Purpose</Text>
         <Text pb="10">
