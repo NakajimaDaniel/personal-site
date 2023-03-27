@@ -8,6 +8,7 @@ import { Box, Container, Flex, HStack, Stack, Text, useColorMode, VStack } from 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useDimensions } from '../../hooks/useDimensions'
+import Head from 'next/head'
 
 
 export default function Post({ page, latestPosts }) {
@@ -32,6 +33,11 @@ export default function Post({ page, latestPosts }) {
 
   return (
     <PageAnimation>
+      <Head>
+        <title>
+          {page.data.title[0].text}
+        </title>
+      </Head>
       {width > 900 ? (
         <Flex spacing={6} direction="row">
 
@@ -76,8 +82,8 @@ export default function Post({ page, latestPosts }) {
               
             </VStack>
           
-          <Flex direction="column" mt={width > 1800 ? "15vw" : "20vw"} w="20vw" p="8" h="max-content" bg={ colorMode === "dark" ? "blue.800" : "white.700" }  borderRadius="5">
-            <Text pb="5" textAlign="center">Latest Posts</Text>
+            <Flex direction="column" mt={width > 1800 ? "15vw" : "20vw"} w="20vw" p="8" h="max-content" bg={ colorMode === "dark" ? "blue.800" : "white.700" }  borderRadius="5">
+            <Text pb="5" textAlign="center" fontWeight="bold">Latest Posts</Text>
             <Box alignItems="left">
               { latestPosts.map((val, key) => {
                   return (
@@ -90,8 +96,6 @@ export default function Post({ page, latestPosts }) {
                   )
               })}  
             </Box>
- 
-
           </Flex>
 
         </Flex>
