@@ -71,7 +71,7 @@ export default function Post({ page, latestPosts }) {
               </HStack>
               
               <VStack w="100%">
-                <Box w="40%" >
+                <Box w="90%" >
                   <PrismicImage field={page.data.banner} /> 
                 </Box>
               </VStack>
@@ -135,8 +135,9 @@ export default function Post({ page, latestPosts }) {
 
         <VStack w="100%">
           <Box w="100%" >
-            <PrismicImage field={page.data.banner} /> 
+            <PrismicImage field={page.data.banner} />
           </Box>
+          
         </VStack>
 
         <SliceZone slices={page.data.slices} components={components} />
