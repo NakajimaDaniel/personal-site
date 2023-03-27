@@ -4,6 +4,7 @@ import { PageAnimation } from "../../components/PageAnimation";
 import { Post } from "../../components/Post";
 import { useDimensions } from "../../hooks/useDimensions";
 import * as prismicH from '@prismicio/helpers'
+import Head from "next/head";
 
 export default function Blog({ page }) {
 
@@ -36,6 +37,9 @@ export default function Blog({ page }) {
 
   return (
     <PageAnimation>
+    <Head>
+      <title>Blog</title>
+    </Head>
     <Container maxW="100vw" w="100%" mt="20">
       <Box pt="6" pl={width > 900 ? "10" : "0"} pb="10">
         <Text fontWeight="bold" fontSize="2xl">

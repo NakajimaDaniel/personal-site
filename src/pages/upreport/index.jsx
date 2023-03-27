@@ -1,8 +1,10 @@
 
 import { Box, Container, Flex, Grid, Image, Text, useColorMode, VStack } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
+import Head from "next/head";
 import ProjectCard from "../../components/ProjectCard";
 import { useDimensions } from '../../hooks/useDimensions'
+import { PageAnimation } from '../../components/PageAnimation'
 
 
 export default function UpReport() {
@@ -12,7 +14,11 @@ export default function UpReport() {
 
 
   return (
+    <PageAnimation>
     <Container mt="20" maxW="100vw" w="100%">
+      <Head>
+        <title>Up Report</title>
+      </Head>
       <Flex direction={"column"} pl={width >= 500 ? "20" : "2"} pr={width >= 500 ? "20" : "2"}>
         
         <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
@@ -101,5 +107,6 @@ export default function UpReport() {
 
       </Flex>
     </Container>
+    </PageAnimation>
   )
 }
