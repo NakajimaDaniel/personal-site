@@ -13,14 +13,18 @@ export default function Blog({ page }) {
     const post = page.map(val =>{
       return val.data
    })
-
-   const postSlices = post[0].slices
-      .filter(slice => {return slice.slice_type === "text"})
+/*
+   const postSlices = post
+      .filter(val => {return val.slices.slice_type === "text"})
       .map(val => {return val} )
+*/
+   const postSlices = post.map(val => {
+    return val.slices.filter(val2 => {return val2.slice_type == "text"})[0]
+   })
 
    const text = postSlices[0].items.map(val => prismicH.asText(val.text) ).join(" ").substring(0, 200);
 
-   const excerpt = text.length > 10 ? text.substring(0, text.lastIndexOf(" ")) + "…" : text;
+   //const excerpt = text.length > 10 ? text.substring(0, text.lastIndexOf(" ")) + "…" : text;
    
    const posts = page.map(val => {
     return {
@@ -29,13 +33,23 @@ export default function Blog({ page }) {
       slug: val.uid,
       banner: val.data.banner,
       publicationDate: val.first_publication_date,
-      type: val.type,
-      excerpt: excerpt,
+      type: val.type,/*
+      excerpt: val.data.map(val2 => {
+        return val2.slices.filter(val3 => {return val3.slice_type === "text"})[0]
+      }), */
+      excerpt: val.data.slices.filter(val2 => {
+        return val2.slice_type === "text"
+      })
+      .map(val3 => {
+        return val3.items.map(val => prismicH.asText(val.text))
+      })[0].pop().substring(0, 200) + "...",
       tags: val.tags
 
     }
   })
-  
+
+  console.log(posts)
+
   return (
     <PageAnimation>
     <Head>
@@ -62,7 +76,14 @@ export default function Blog({ page }) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  const page = await client.getAllByType('blogpost')
+  const page = await client.getAllByType('blogpost', {
+    orderings: [
+      { field: "my.blogpost.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
+
+  console.log(page)
 
   return {
     props: {
