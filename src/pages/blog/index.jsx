@@ -13,18 +13,13 @@ export default function Blog({ page }) {
     const post = page.map(val =>{
       return val.data
    })
-/*
-   const postSlices = post
-      .filter(val => {return val.slices.slice_type === "text"})
-      .map(val => {return val} )
-*/
+
    const postSlices = post.map(val => {
     return val.slices.filter(val2 => {return val2.slice_type == "text"})[0]
    })
 
    const text = postSlices[0].items.map(val => prismicH.asText(val.text) ).join(" ").substring(0, 200);
 
-   //const excerpt = text.length > 10 ? text.substring(0, text.lastIndexOf(" ")) + "…" : text;
    
    const posts = page.map(val => {
     return {
@@ -33,10 +28,7 @@ export default function Blog({ page }) {
       slug: val.uid,
       banner: val.data.banner,
       publicationDate: val.first_publication_date,
-      type: val.type,/*
-      excerpt: val.data.map(val2 => {
-        return val2.slices.filter(val3 => {return val3.slice_type === "text"})[0]
-      }), */
+      type: val.type,
       excerpt: val.data.slices.filter(val2 => {
         return val2.slice_type === "text"
       })
@@ -47,8 +39,6 @@ export default function Blog({ page }) {
 
     }
   })
-
-  console.log(posts)
 
   return (
     <PageAnimation>
