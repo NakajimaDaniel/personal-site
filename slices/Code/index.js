@@ -43,7 +43,7 @@ const Code = ({ slice }) => {
               </SyntaxHighlighter>
               </Box>
             ) : (
-              <SyntaxHighlighter language={match[1]}>
+              <SyntaxHighlighter>
               {children}
             </SyntaxHighlighter>
             )
