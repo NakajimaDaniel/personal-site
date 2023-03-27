@@ -88,7 +88,7 @@ export default function Post({ page, latestPosts }) {
               { latestPosts.map((val, key) => {
                   return (
                     <Link href={"/blog/" + val.uid} passHref key={key}>
-                      <Text _hover={{ textDecoration: "underline" }}>
+                      <Text _hover={{ textDecoration: "underline" }} pb="5">
                         <PrismicText field={val.data.title}  />
                       </Text>
                     </Link>
