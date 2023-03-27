@@ -71,8 +71,8 @@ export default function Post({ page, latestPosts }) {
               </HStack>
               
               <VStack w="100%">
-                <Box w="90%" >
-                  <PrismicImage field={page.data.banner} /> 
+                <Box w="90%" border={20}>
+                  <PrismicImage field={page.data.banner} imgixParams={{borderRadius: "20,20,20,20", border: "20,00FFFFFF", borderRadiusInner: "20,20,20,20" }}/> 
                 </Box>
               </VStack>
               
@@ -135,7 +135,7 @@ export default function Post({ page, latestPosts }) {
 
         <VStack w="100%">
           <Box w="100%" >
-            <PrismicImage field={page.data.banner} />
+            <PrismicImage field={page.data.banner} imgixParams={{borderRadius: "20,20,20,20", border: "20,00FFFFFF", borderRadiusInner: "20,20,20,20" }}/>
           </Box>
           
         </VStack>
