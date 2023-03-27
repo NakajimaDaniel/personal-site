@@ -11,7 +11,7 @@ import { useDimensions } from "../../hooks/useDimensions";
 export function Post({post}) {
 
   const [hasMounted, setHasMounted] = useState(false);
-  const {width, height} = useDimensions();
+  const { width } = useDimensions();
 
 
   useEffect(() => {
@@ -23,11 +23,11 @@ export function Post({post}) {
   }
 
   const options = {
-    year: 'numeric', month: 'numeric', day: 'numeric',
+    year: 'numeric', month: 'long', day: 'numeric',
 
   }
 
-  const postFirstPublicationDate = new Intl.DateTimeFormat('default', options).format(new Date(post.publicationDate))
+  const postFirstPublicationDate = new Intl.DateTimeFormat('en-us', options).format(new Date(post.publicationDate))
 
   
   return (
@@ -37,16 +37,23 @@ export function Post({post}) {
 
         <VStack mr="10" >
           <Link href={"/blog/" + post.slug}> 
-            <Box height="200px" width="310px">
-              <PrismicNextImage field={post.banner} imgixParams={{ fit: 'crop', maxWidth:310, maxHeight: 200}}  />
+            <Box height="200px" width="310px" >
+              <PrismicNextImage field={post.banner} imgixParams={{ fit: 'crop', maxWidth:310, maxHeight: 200}} alt="" />
             </Box>
           </Link>
         </VStack>
 
         <Box>
           <VStack h="200"  alignItems="left">
+            <Flex gap="4">
+              {post.tags.map((val) => {
+                return (
+                  <Text key={val} color={"#FFC700"} >{val}</Text>
+                )
+              })}
+            </Flex>
             <Link href={"/blog/" + post.slug}>
-              <Text fontWeight="600" fontSize="xl" _hover={{ textDecoration: "underline" }}>
+              <Text fontWeight="bold" fontSize="xl" _hover={{ textDecoration: "underline" }}>
                 <PrismicRichText  field={post.title}/>        
               </Text>
             </Link>
@@ -54,6 +61,7 @@ export function Post({post}) {
               {post.excerpt}
             </Text>
             <Spacer />
+            <Text fontWeight={"bold"}>Daniel Nakajima</Text>
             <Text>{ postFirstPublicationDate }</Text>
           </VStack>
         </Box>
@@ -64,17 +72,25 @@ export function Post({post}) {
 
         <Link href={"/blog/" + post.slug}>
           <Box w={[310]} h={[200]}>
-            <PrismicImage field={post.banner} />
+            <PrismicImage field={post.banner} alt=""/>
           </Box>
         </Link>
 
         <Box pl="5" w="100%">
         <VStack alignItems="left">
+        <Flex gap="4">
+              {post.tags.map((val) => {
+                return (
+                  <Text key={val}>{val}</Text>
+                )
+              })}
+        </Flex>
         <Link href={"/blog/" + post.slug} >
           <Text fontWeight="600" fontSize="xl"  _hover={{ textDecoration: "underline" }}>
             <PrismicRichText  field={post.title}/>
           </Text>
         </Link>
+        <Text fontWeight={"bold"}>Daniel Nakajima</Text>
         <Text>{ postFirstPublicationDate }</Text>
         </VStack>
 

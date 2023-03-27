@@ -30,11 +30,12 @@ export default function Blog({ page }) {
       banner: val.data.banner,
       publicationDate: val.first_publication_date,
       type: val.type,
-      excerpt: excerpt
+      excerpt: excerpt,
+      tags: val.tags
 
     }
   })
-
+  
   return (
     <PageAnimation>
     <Head>
