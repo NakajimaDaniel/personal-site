@@ -42,6 +42,9 @@
             },
             "text": {
               "type": "SharedSlice"
+            },
+            "text_title": {
+              "type": "SharedSlice"
             }
           }
         }

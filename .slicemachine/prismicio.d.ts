@@ -46,7 +46,7 @@ interface BlogpostDocumentData {
  * Slice for *BlogPost → Slice Zone*
  *
  */
-type BlogpostDocumentDataSlicesSlice = ImageSlice | CodeSlice | TextSlice;
+type BlogpostDocumentDataSlicesSlice = ImageSlice | CodeSlice | TextSlice | TextTitleSlice;
 /**
  * BlogPost document from Prismic
  *
@@ -185,11 +185,66 @@ type TextSliceVariation = TextSliceDefault;
  *
  */
 export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
+/**
+ * Primary content in TextTitle → Primary
+ *
+ */
+interface TextTitleSliceDefaultPrimary {
+    /**
+     * Title field in *TextTitle → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: text_title.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in TextTitle → Items
+ *
+ */
+export interface TextTitleSliceDefaultItem {
+    /**
+     * text field in *TextTitle → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_title.items[].text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+}
+/**
+ * Default variation for TextTitle Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TextTitle`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextTitleSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextTitleSliceDefaultPrimary>, Simplify<TextTitleSliceDefaultItem>>;
+/**
+ * Slice variation for *TextTitle*
+ *
+ */
+type TextTitleSliceVariation = TextTitleSliceDefault;
+/**
+ * TextTitle Shared Slice
+ *
+ * - **API ID**: `text_title`
+ * - **Description**: `TextTitle`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextTitleSlice = prismicT.SharedSlice<"text_title", TextTitleSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, CodeSliceDefaultPrimary, CodeSliceDefault, CodeSliceVariation, CodeSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultItem, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, CodeSliceDefaultPrimary, CodeSliceDefault, CodeSliceVariation, CodeSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextSliceDefaultItem, TextSliceDefault, TextSliceVariation, TextSlice, TextTitleSliceDefaultPrimary, TextTitleSliceDefaultItem, TextTitleSliceDefault, TextTitleSliceVariation, TextTitleSlice };
     }
 }

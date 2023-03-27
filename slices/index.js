@@ -3,15 +3,18 @@
 import Code from './Code';
 import Image from './Image';
 import Text from './Text';
+import TextTitle from './TextTitle';
 
 export {
 	Code,
 	Image,
 	Text,
+	TextTitle,
 };
 
 export const components = {
 	code: Code,
 	image: Image,
 	text: Text,
+	text_title: TextTitle,
 };
