@@ -21,7 +21,7 @@ export default function NxWeather() {
       </Head>
       <Flex direction={"column"} pl={width >= 500 ? "20" : "2"} pr={width >= 500 ? "20" : "2"}>
         
-        <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
+        <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8" _hover={{ textDecoration: "underline" }}>
           <Link href="https://nx-weather.vercel.app/" >
             Nx Weather
           </Link> 
