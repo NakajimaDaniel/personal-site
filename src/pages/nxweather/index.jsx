@@ -5,6 +5,7 @@ import Head from "next/head";
 import ProjectCard from "../../components/ProjectCard";
 import { useDimensions } from '../../hooks/useDimensions'
 import { PageAnimation } from '../../components/PageAnimation'
+import Link from "next/link";
 
 export default function NxWeather() {
 
@@ -21,7 +22,9 @@ export default function NxWeather() {
       <Flex direction={"column"} pl={width >= 500 ? "20" : "2"} pr={width >= 500 ? "20" : "2"}>
         
         <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
-          Nx Weather
+          <Link href="https://nx-weather.vercel.app/" >
+            Nx Weather
+          </Link> 
         </Text>
           <Flex align="center" justify="center" >
           <Box w={width >= 900 ? "60%" : "100%"} h={width >= 900 ? "60%" : "100%"} >
@@ -45,7 +48,7 @@ export default function NxWeather() {
         </Text>
         
         <Text fontWeight={"bold"} fontSize={"xl"} pb="2">Tech Stack</Text>
-        <Grid templateColumns={width >= 500 ? "repeat(5, 1fr)" : "repeat(3, 1fr)"} gap={4} pb={"8"} >
+        <Grid templateColumns={width >= 500 ? "repeat(5, 1fr)" : "repeat(3, 1fr)"} pb={"8"} width={width >= 1000 ? "30%" : "100%"} >
           <Text>React.js</Text>
           <Text>Next.js</Text>
           <Text>TailWindCSS</Text>

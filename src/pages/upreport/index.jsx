@@ -5,6 +5,7 @@ import Head from "next/head";
 import ProjectCard from "../../components/ProjectCard";
 import { useDimensions } from '../../hooks/useDimensions'
 import { PageAnimation } from '../../components/PageAnimation'
+import Link from "next/link";
 
 
 export default function UpReport() {
@@ -21,9 +22,12 @@ export default function UpReport() {
       </Head>
       <Flex direction={"column"} pl={width >= 500 ? "20" : "2"} pr={width >= 500 ? "20" : "2"}>
         
-        <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
-          Up Report
-        </Text>
+          <Text fontSize={['2xl', '3xl']} fontWeight={"bold"} pb="8" pt="8">
+            <Link href="https://up-report.vercel.app/">
+              Up Report
+            </Link>
+          </Text>
+        
           <Flex align="center" justify="center" >
           <Box w={width >= 900 ? "60%" : "100%"} h={width >= 900 ? "60%" : "100%"} >
             <motion.div
@@ -46,7 +50,7 @@ export default function UpReport() {
         </Text>
         
         <Text fontWeight={"bold"} fontSize={"xl"} pb="2">Tech Stack</Text>
-        <Grid templateColumns={width >= 500 ? "repeat(5, 1fr)" : "repeat(3, 1fr)"} gap={4} pb={"8"}  >
+        <Grid templateColumns={width >= 500 ? "repeat(5, 1fr)" : "repeat(3, 1fr)"} pb={"8"} width={width >= 1000 ? "30%" : "100%"} >
           <Text>React.js</Text>
           <Text>Next.js</Text>
           <Text>Firebase</Text>
