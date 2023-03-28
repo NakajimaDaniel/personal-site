@@ -35,15 +35,15 @@ export function Post({post}) {
     {width >= 650 ? (
       <Flex mb="10" direction="row">
 
-        <VStack mr="10" >
+        <VStack mr="10" w="30%" >
           <Link href={"/blog/" + post.slug}> 
-            <Box height="200px" width="310px" >
-              <PrismicNextImage field={post.banner} imgixParams={{ fit: 'crop', maxWidth:310, maxHeight: 200}} alt="" />
+            <Box>
+              <PrismicNextImage field={post.banner} imgixParams={{borderRadius: "20,20,20,20", border: "20,00FFFFFF", borderRadiusInner: "20,20,20,20" }} alt=""/>
             </Box>
           </Link>
         </VStack>
 
-        <Box>
+        <Box w="50%">
           <VStack h="200"  alignItems="left">
             <Flex gap="4">
               {post.tags.map((val) => {
@@ -71,7 +71,7 @@ export function Post({post}) {
       <VStack mb="10">
 
         <Link href={"/blog/" + post.slug}>
-          <Box w={[310]} h={[200]}>
+          <Box>
             <PrismicImage field={post.banner} alt=""/>
           </Box>
         </Link>
